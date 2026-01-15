@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Makanan Tradisional</title>
+
+    <style>
+        body, h1, h2, p, ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #e8d1c5;
+        }
+
+        header {
+            background: #b22222;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background: #8b0000;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            padding: 30px 20px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #b22222;
+            text-align: center;
+            font-size: 28px;
+        }
+
+        /* GRID CARD */
+        .food-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .card-content h3 {
+            color: #8b0000;
+            margin-bottom: 8px;
+        }
+
+        footer {
+            background: #b22222;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Daftar Makanan Tradisional Indonesia</h1>
+        <p>Pilihan makanan khas Nusantara dari berbagai daerah</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="Daftar_Makanan.html">Daftar Makanan</a>
+        <a href="about.html">Tentang</a>
+        <a href="contact.html">Kontak</a>
+    </nav>
+
+    <div class="container">
+        <h2>Pilihan Makanan Tradisional</h2>
+
+        <div class="food-grid">
+            <!-- 1 -->
+            <div class="card">
+                <img src="https://tse4.mm.bing.net/th/id/OIP.o5OEYCYT38coWIeyQZPLNQHaFb?pid=Api&P=0&h=180/Nasi_Liwet.jpg">
+                <div class="card-content">
+                    <h3>Nasi Liwet</h3>
+                    <p>Gurih dan wangi khas Jawa Barat.</p>
+                </div>
+            </div>
+
+            <!-- 2 -->
+            <div class="card">
+                <img src="https://2.bp.blogspot.com/-SxAbSmtNPiE/VF2BrijTXJI/AAAAAAAABHA/2u9psxh2iRk/s1600/Cara-Membuat-Rendang.jpg">
+                <div class="card-content">
+                    <h3>Rendang</h3>
+                    <p>Daging berbumbu khas Minang, kaya rempah.</p>
+                </div>
+            </div>
+
+            <!-- 3 -->
+            <div class="card">
+                <img src="https://tse2.mm.bing.net/th/id/OIP.sJFGo8MmsPl2rU1t4U-7NQHaEK?pid=Api&P=0&w=300&h=300">
+                <div class="card-content">
+                    <h3>Pempek</h3>
+                    <p>Camilan ikan dari Palembang dengan cuko pedas-manis.</p>
+                </div>
+            </div>
+
+            <!-- 4 -->
+            <div class="card">
+                <img src="https://img.freepik.com/fotos-premium/bakpia-bakpia-pathok-jogja-comida-tipica-yogyakarta_511235-10139.jpg?w=2000">
+                <div class="card-content">
+                    <h3>Bakpia</h3>
+                    <p>Kue lembut isi kacang hijau khas Yogyakarta.</p>
+                </div>
+            </div>
+
+            <!-- 5 -->
+            <div class="card">
+                <img src="https://tse3.mm.bing.net/th/id/OIP.z5eMXzupmWwz0nAmbQd2wgHaFa?pid=Api&P=0&h=180">
+                <div class="card-content">
+                    <h3>Sate Ayam</h3>
+                    <p>Sate khas Ponorogo dengan bumbu kacang.</p>
+                </div>
+            </div>
+
+            <!-- 6 -->
+            <div class="card">
+                <img src="https://awsimages.detik.net.id/community/media/visual/2020/06/18/gudeg.jpeg?w=724">
+                <div class="card-content">
+                    <h3>Gudeg</h3>
+                    <p>Masakan nangka manis khas Yogyakarta.</p>
+                </div>
+            </div>
+
+            <!-- 7 -->
+            <div class="card">
+                <img src="https://ik.imagekit.io/nibble/public/uploads/bakso_unik_di_jakarta_02_61d2f120ce_5V0kPxTAD.jpg">
+                <div class="card-content">
+                    <h3>Bakso</h3>
+                    <p>Bola daging berkuah gurih, populer di seluruh Indonesia.</p>
+                </div>
+            </div>
+
+            <!-- 8 -->
+            <div class="card">
+                <img src="https://3.bp.blogspot.com/-Jkti1OXMXew/V28X78sDTNI/AAAAAAAAAfM/BHsF-edYrG0PXpzpGEneDTQTaa3UF0ghACKgB/s1600/rawon-daging-khas-jawa-timur.jpg">
+                <div class="card-content">
+                    <h3>Rawon</h3>
+                    <p>Sup daging berwarna hitam khas Jawa Timur.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        © 2025 Makanan Tradisional Indonesia
+    </footer>
+
+</body>
+</html>

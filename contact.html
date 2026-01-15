@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak Kami</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background: url('https://img.freepik.com/premium-vector/indonesian-foods-snack-cartoon-color-illustration_7243-199.jpg?w=2000');
+            background-size: cover;
+            background-attachment: fixed;
+            color: #333;
+        }
+
+        /* NAVBAR */
+        header {
+            background: #ddedea;
+            color: #fff;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            transition: .3s;
+        }
+
+        nav ul li a:hover {
+            color: #1abc9c;
+        }
+
+        /* CONTACT SECTION */
+        .contact-container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: #C2DFFF;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .contact-container h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 2em;
+            color: #2c3e50;
+        }
+
+        .input-group {
+            position: relative;
+        }
+
+        .input-group i {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            color: #666;
+        }
+
+        form input,
+        form textarea {
+            width: 100%;
+            padding: 12px 12px 12px 38px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 1em;
+        }
+
+        form button {
+            padding: 12px 30px;
+            background: #25D366;
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: .3s;
+            font-size: 1em;
+        }
+
+        form button:hover {
+            background: #1ebe5d;
+        }
+
+        /* FLOATING WHATSAPP BUTTON */
+        .wa-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        /* POPUP */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        .popup button {
+            margin-top: 10px;
+            padding: 8px 20px;
+            border: none;
+            background: #2c3e50;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* NOTIFICATION */
+        .notif {
+            display: none;
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2ecc71;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <h1>MyWebsite</h1>
+        <nav>
+            <ul>
+                <a href="index.html">Home</a>
+        <a href="Daftar_Makanan.html">Daftar Makanan</a>
+        <a href="about.html">Tentang</a>
+        <a href="contact.html">Kontak</a>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTACT SECTION -->
+    <div class="contact-container">
+        <h2>Hubungi Kami</h2>
+
+        <form id="waForm">
+            <div class="input-group">
+                <i>👤</i>
+                <input id="nama" type="text" placeholder="Nama Lengkap" required>
+            </div>
+
+            <div class="input-group">
+                <i>✉️</i>
+                <input id="email" type="email" placeholder="Email" required>
+            </div>
+
+            <div class="input-group">
+                <i>💬</i>
+                <textarea id="pesan" rows="5" placeholder="Pesan Anda..." required></textarea>
+            </div>
+
+            <button type="submit">Kirim Pesan</button>
+        </form>
+    </div>
+
+    <!-- FLOATING BUTTON -->
+    <a class="wa-float" href="https://wa.me/6289678677751" target="_blank">🟢</a>
+
+    <!-- POPUP -->
+    <div class="popup" id="popup">
+        <p>Kirim pesan ke admin melalui WhatsApp?</p>
+        <button onclick="sendWA()">Ya, kirim</button>
+    </div>
+
+    <!-- NOTIFICATION -->
+    <div class="notif" id="notif">Pesan Anda dikirim!</div>
+
+    <script>
+        const form = document.getElementById("waForm");
+        const popup = document.getElementById("popup");
+        const notif = document.getElementById("notif");
+
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+            popup.style.display = "block";
+        });
+
+        function sendWA() {
+            let nama = document.getElementById("nama").value;
+            let email = document.getElementById("email").value;
+            let pesan = document.getElementById("pesan").value;
+
+            let url =
+                "https://wa.me/628813892546?text=" +
+                "Nama: " + nama + "%0A" +
+                "Email: " + email + "%0A" +
+                "Pesan: " + pesan;
+
+            popup.style.display = "none";
+
+            notif.style.display = "block";
+            setTimeout(() => notif.style.display = "none", 3000);
+
+            window.open(url, "_blank");
+        }
+    </script>
+
+</body>
+</html>
